@@ -546,14 +546,20 @@ header{
     padding: .77rem;
     text-align: center;
     .attribution{
-      font-size: 1rem;
+      font-size: .77rem;
       @include textTypograpfy();
       color: $Dark-Grayish-Blue-Text;
       @include prefix((transition: 1.5s ease-in-out), webkit moz );
+      @media (min-width:$sm) {
+        font-size: 1rem;
+      }
       a{
         color: $Facebook;
-        font-size: 1.35rem;
+        font-size: .90rem;
         text-transform: uppercase;
+        @media (min-width:$sm) {
+        font-size: 1.35rem;
+      }
       }
     }
   }
