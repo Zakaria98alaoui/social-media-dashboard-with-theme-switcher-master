@@ -539,7 +539,7 @@ footer {
 }
 
 footer .attribution {
-  font-size: 1rem;
+  font-size: .77rem;
   text-transform: capitalize;
   font-weight: 600;
   letter-spacing: 3px;
@@ -548,10 +548,22 @@ footer .attribution {
   transition: 1.5s ease-in-out;
 }
 
+@media (min-width: 576px) {
+  footer .attribution {
+    font-size: 1rem;
+  }
+}
+
 footer .attribution a {
   color: #198ff5;
-  font-size: 1.35rem;
+  font-size: .90rem;
   text-transform: uppercase;
+}
+
+@media (min-width: 576px) {
+  footer .attribution a {
+    font-size: 1.35rem;
+  }
 }
 
 /* end footer*/
