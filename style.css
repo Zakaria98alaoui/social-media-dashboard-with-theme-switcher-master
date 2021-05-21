@@ -1,0 +1,558 @@
+/*
+  ===================
+    fonts
+  ===================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+/*
+  ===================
+    mixing
+  ===================
+*/
+/* Animation 
+  @include animation(0,.5s,animation-name,ease)
+*/
+/* Animation keyframe
+  @include keyframe(animation-name){
+    0%{
+      transform .scale(.5);
+    }
+    100%{
+      transform .scale(1.5);
+    }
+  }
+*/
+/*
+  ===================
+    * Reset
+  ===================
+*/
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  ===================
+    * variables
+  ===================
+*/
+/*
+  ===================
+    color
+  ===================
+*/
+/*
+  ===================
+    typography
+  ===================
+*/
+/*
+  ===================
+    position
+  ===================
+*/
+/*
+  ===================
+    * grid system
+  ===================
+*/
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+/*
+  ===================
+    * media query's
+  ===================
+*/
+/*
+  ===================
+    * components
+  ===================
+*/
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+/*
+  ===================
+    * Classes
+  ===================
+*/
+.up {
+  color: #1db489;
+}
+
+.down {
+  color: #dc414c;
+}
+
+.fa-chevron-up {
+  color: #1db489;
+}
+
+.fa-chevron-down {
+  color: #dc414c;
+}
+
+/*
+  ===================
+    * global style
+  ===================
+*/
+body {
+  height: auto;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: white;
+  color: #1e202a;
+  font-size: 14px;
+  letter-spacing: 1.8;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+body ul {
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
+}
+
+/* start header*/
+header {
+  height: calc(100vh-6rem);
+  padding: 1.55rem 0;
+}
+
+header .nav {
+  display: block;
+}
+
+@media (min-width: 576px) {
+  header .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+header .nav .nav-header {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 576px) {
+  header .nav .nav-header {
+    margin-bottom: 0;
+  }
+}
+
+header .nav .nav-header h1 {
+  font-size: 1.35rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+@media (min-width: 576px) {
+  header .nav .nav-header h1 {
+    font-size: 1.7rem;
+  }
+}
+
+header .nav .nav-header span {
+  font-size: .9rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #63687e;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+header .nav .nav-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+  header .nav .nav-center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+header .nav .nav-center span {
+  display: inline-block;
+  font-size: .8rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #aeb3cb;
+  word-spacing: 2px;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+@media (min-width: 576px) {
+  header .nav .nav-center span {
+    padding: .8rem 1rem;
+  }
+}
+
+header .nav .nav-center .switch-btn {
+  position: relative;
+  background-color: #aeb3cb;
+  border: solid 2px #aeb3cb;
+  padding: .8rem 1.7rem;
+  border-radius: 1.18rem;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header .nav .nav-center .switch-btn .switch {
+  position: absolute;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding: .5rem;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header .nav .nav-center .switch-btn.slide .switch {
+  left: 50%;
+}
+
+/* End header*/
+/* start card folowers*/
+.card-folowers {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card-folowers .card {
+  padding: 1.5rem 2.5rem;
+  background-color: #f0f2fa;
+  text-align: center;
+  border-radius: .5rem;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+.card-folowers .card:hover {
+  -webkit-transform: translateY(-1.1rem);
+          transform: translateY(-1.1rem);
+  cursor: pointer;
+}
+
+.card-folowers .card:first-of-type {
+  border-top: solid 5px #198ff5;
+}
+
+.card-folowers .card:nth-child(2) {
+  border-top: solid 5px #1ca0f2;
+}
+
+.card-folowers .card:nth-child(3) {
+  border-top: solid 5px #dc414c;
+}
+
+.card-folowers .card:last-of-type {
+  border-top: solid 5px #c4032a;
+}
+
+.card-folowers .card a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: .8rem;
+}
+
+.card-folowers .card a .social-media {
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+.card-folowers .card a .social-media .fa-facebook-f {
+  padding: .2rem .3rem;
+  border-radius: .3rem;
+  background-color: #198ff5;
+  color: #f0f2fa;
+}
+
+.card-folowers .card a .social-media .fa-twitter {
+  color: #1ca0f2;
+}
+
+.card-folowers .card a .social-media .fa-instagram {
+  color: #dc414c;
+}
+
+.card-folowers .card a .social-media .fa-youtube {
+  color: #c4032a;
+}
+
+.card-folowers .card a .email {
+  margin-left: .5rem;
+  color: #1e202a;
+  font-size: .77rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+.card-folowers .card .folowers-count {
+  font-size: 3rem;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+.card-folowers .card .folowers {
+  font-size: .77rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  padding: .25rem;
+  color: #aeb3cb;
+}
+
+.card-folowers .card .trend span {
+  font-size: .7rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+/*end card folowers*/
+/* start media stat*/
+.title-card-stat {
+  margin-top: 3rem;
+}
+
+@media (min-width: 576px) {
+  .title-card-stat {
+    margin-top: 1rem;
+  }
+}
+
+.title-card-stat h2 {
+  font-size: 1.35rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+@media (min-width: 576px) {
+  .title-card-stat h2 {
+    font-size: 1.7rem;
+  }
+}
+
+.media-stat {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.media-stat .card-stat {
+  padding: 1rem 1.5rem;
+  background-color: #f0f2fa;
+  text-align: center;
+  border-radius: .5rem;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+.media-stat .card-stat:hover {
+  -webkit-transform: translateY(-0.7rem);
+          transform: translateY(-0.7rem);
+  cursor: pointer;
+}
+
+.media-stat .card-stat .card-media-content,
+.media-stat .card-stat .card-media-stat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.media-stat .card-stat .card-media-content {
+  margin-bottom: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.media-stat .card-stat .card-media-content p {
+  font-size: .9rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #aeb3cb;
+}
+
+.media-stat .card-stat .card-media-content span {
+  font-size: 1.3rem;
+  display: inline-block;
+}
+
+.media-stat .card-stat .card-media-content span .fa-facebook-f {
+  padding: .2rem .3rem;
+  border-radius: .3rem;
+  background-color: #198ff5;
+  color: #f0f2fa;
+}
+
+.media-stat .card-stat .card-media-content span .fa-twitter {
+  color: #1ca0f2;
+}
+
+.media-stat .card-stat .card-media-content span .fa-instagram {
+  color: #dc414c;
+}
+
+.media-stat .card-stat .card-media-content span .fa-youtube {
+  color: #c4032a;
+}
+
+.media-stat .card-stat .card-media-stat {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.media-stat .card-stat .card-media-stat .folowers-count {
+  font-size: 2.1rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+.media-stat .card-stat .card-media-stat .pourcentage .down {
+  font-size: .8rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+/* enf media stat*/
+/* start footer*/
+footer {
+  padding: .77rem;
+  text-align: center;
+}
+
+footer .attribution {
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #63687e;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+}
+
+footer .attribution a {
+  color: #198ff5;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+}
+
+/* end footer*/
+/*# sourceMappingURL=style.css.map */

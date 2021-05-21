@@ -1,0 +1,560 @@
+/*
+  ===================
+    fonts
+  ===================
+*/
+// ! open sans Font
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+// ! Roboto Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+/*
+  ===================
+    mixing
+  ===================
+*/
+/// Mixin to prefix several properties at once
+/// @author zakaria EL ALAOUI
+/// @param {Map} $declarations - Declarations to prefix
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($declaration, $prefixes:()) {
+
+  @each $property,
+  $value in $declaration {
+    @each $prefix in $prefixes {
+      #{'-'+ $prefix + '-'+ $property}: $value
+    }
+
+    // output standard non prefixed declaration
+    #{$property}:$value;
+  }
+
+  ;
+}
+
+;
+
+/* Animation 
+  @include animation(0,.5s,animation-name,ease)
+*/
+@mixin animation($delay, $duration, $animation, $direction:forward, $fillmode: $forwards) {
+  // webkit
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $name;
+  -webkit-animation-fill-mode: $fillmode;
+  -webkit-animation-direction: $direction;
+  // mozilla
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $name;
+  -moz-animation-fill-mode: $fillmode;
+  -moz-animation-direction: $direction;
+  // opera
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-name: $name;
+  -o-animation-fill-mode: $fillmode;
+  -o-animation-direction: $direction;
+  // microsoft explorer
+  -ms-animation-delay: $delay;
+  -ms-animation-duration: $duration;
+  -ms-animation-name: $name;
+  -ms-animation-fill-mode: $fillmode;
+  -ms-animation-direction: $direction;
+  // output standard non prefixed
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $name;
+  animation-fill-mode: $fillmode;
+  animation-direction: $direction;
+}
+
+;
+
+/* Animation keyframe
+  @include keyframe(animation-name){
+    0%{
+      transform .scale(.5);
+    }
+    100%{
+      transform .scale(1.5);
+    }
+  }
+*/
+@mixin keyframe ($animation_name_keyframe) {
+  @-webkit-keyframe $animation_name_keyframe {
+    @content;
+  }
+
+  @-moz-keyframe $animation_name_keyframe {
+    @content;
+  }
+
+  @-o-keyframe $animation_name_keyframe {
+    @content;
+  }
+
+  @-ms-keyframe $animation_name_keyframe {
+    @content;
+  }
+
+  @keyframe $animation_name_keyframe {
+    @content;
+  }
+};
+@mixin  mediaColors {
+.fa-facebook-f{
+    padding: .2rem .3rem;
+    border-radius: .3rem;
+    background-color: $Facebook;
+    color: $Light-Grayish-Blue-CardBG;
+  }
+    .fa-twitter{
+    color: $Twitter;
+  }
+  .fa-instagram{
+    color: $Bright;
+  }
+    .fa-youtube{
+    color: $YouTube;
+  }
+}
+@mixin textTypograpfy {
+   text-transform: capitalize;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+
+/*
+  ===================
+    * Reset
+  ===================
+*/
+*,
+::before,
+::after {
+  @include prefix((box-sizing: border-box), webkit moz o ms);
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  ===================
+    * variables
+  ===================
+*/
+
+/*
+  ===================
+    color
+  ===================
+*/
+$black-color :#242424;
+$white-color :#F1F1F1;
+$white-light-color:#c7ecee;
+$orange-color:#f15024;
+$orange-light-color :#ffbe76;
+$yellow-color :#f6e58d;
+$pink-clamour :#ff7979;
+$green-color:#badc58;
+$red-color:#eb4d4b;
+$exodus-color:#686de0;
+$blue-fluency-color:#7ed6df;
+$heliotrope-color:#e056fd;
+$deep-coamaru:#30336b;
+$green-light-color :#95afc0;
+$grey-dark-color:#535c68;
+$green-dark-color:#22a6b3;
+$purple-color:#be2edd;
+$blurple-color:#4834d4;
+// Our style
+$Lime_Green: hsl(163, 72%, 41%);
+$Bright: hsl(356, 69%, 56%);
+// social media color
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+$YouTube: hsl(348, 97%, 39%);
+
+// #### Dark Theme
+
+$ToggleDark: linear-gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+
+$Very_Dark_Blue : hsl(230, 17%, 14%);
+$Very_Dark_Blue : hsl(232, 19%, 15%);
+$Dark_Desaturated_Blue : hsl(228, 28%, 20%);
+$Desaturated_Blue: hsl(228, 34%, 66%);
+$White: hsl(0, 0%, 100%);
+
+// #### Light Theme
+
+$ToggleLight: hsl(230, 22%, 74%);
+
+$white-bg :hsl(0, 0%, 100%);
+$very-pall-blue-topBgPatern :hsl(225, 100%, 98%);
+$Light-Grayish-Blue-CardBG: hsl(227, 47%, 96%);
+$Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+$Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+
+
+/*
+  ===================
+    typography
+  ===================
+*/
+$fontFamillyInter : 'Inter', sans-serif;
+// $fontFamillyRoboto : 'Roboto', sans-serif;
+$text-center :center;
+$text-capitalize :capitalize;
+$text-lowercase :lowercase;
+$text-upperCase : upperCase;
+$line-height :1.67px;
+$word-spacing :3px;
+/*
+  ===================
+    position
+  ===================
+*/
+$position-absolute :absolute;
+$position-relative :relative;
+$position-fixed:relative;
+$float-right:right;
+$float-left:left;
+$justify-center :center;
+$align-center :center;
+$flex-column :column;
+
+/*
+  ===================
+    * grid system
+  ===================
+*/
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @media (min-width : 576px) {
+    width: 540px;
+  }
+
+  @media (min-width : 768px) {
+    width: 720px;
+  }
+
+  @media (min-width : 992px) {
+    width: 960px;
+  }
+
+  @media (min-width : 1200px) {
+    width: 1140px;
+  }
+
+  @media (min-width : 1400px) {
+    width: 1320px;
+  }
+}
+
+/*
+  ===================
+    * media query's
+  ===================
+*/
+$xs : 0px;
+$sm : 576px;
+$md : 768px;
+$lg :992px;
+$xl :1200px;
+$xxl :1400px;
+
+/*
+  ===================
+    * components
+  ===================
+*/
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  @include prefix((transition: .3s ease-in-out),webkit moz o ms);
+}
+/*
+  ===================
+    * Classes
+  ===================
+*/
+.up{
+  color:$Lime_Green ;
+}
+.down{
+  color: $Bright;
+}
+ .fa-chevron-up{
+  color: $Lime_Green;
+}
+.fa-chevron-down{
+  color: $Bright;
+} 
+
+
+/*
+  ===================
+    * global style
+  ===================
+*/
+
+body{
+  height: auto;
+  width: 100%;
+  font-family: $fontFamillyInter;
+  background-color: $White;
+  color: $Very-Dark-Blue-Text;
+  font-size: 14px;
+  letter-spacing: 1.8;
+   @include prefix((transition:all .5s ease-in-out), webkit moz );
+  // @media (min-width : $md) {
+  //   height: 100vh;
+  // }
+  ul{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+/* start header*/
+header{
+  height: calc(100vh-6rem);
+  padding: 1.55rem 0;
+  // margin-bottom: .5rem;
+  .nav{
+  display: block;
+  @media (min-width:$sm) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+    .nav-header{
+      margin-bottom: 2rem;
+      @media (min-width:$sm) {
+        margin-bottom: 0;
+      }
+      h1{
+        font-size: 1.35rem;
+        @include textTypograpfy();
+        @include prefix((transition: 1.5s ease-in-out),webkit moz o ms);
+          @media (min-width:$sm) {
+            font-size: 1.7rem;
+      }
+      }
+      span{
+        font-size: .9rem;
+        @include textTypograpfy();
+        color: $Dark-Grayish-Blue-Text;
+        @include prefix((transition: 1.5s ease-in-out),webkit moz o ms);
+      }
+    }
+    .nav-center{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      @media (min-width:$sm) {
+        align-items: center;
+        justify-content: center;
+      }
+      span{
+        display: inline-block;
+        font-size: .8rem;
+        @include textTypograpfy();
+        color: $ToggleLight;
+        word-spacing: 2px;
+        @include prefix((transition: 1.5s ease-in-out), webkit moz );
+         @media (min-width:$sm) {
+        padding: .8rem 1rem;
+      }
+      }
+      .switch-btn{
+      position: relative;
+      background-color: $ToggleLight;
+      border: solid 2px $ToggleLight;
+      padding: .8rem 1.7rem;
+      border-radius: 1.18rem;
+      cursor: pointer;
+      @include prefix((transition:all .5s ease-in-out), webkit moz );
+      .switch{
+        position: absolute;
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $White;
+        padding: .5rem;
+        border-radius: 50%;
+         @include prefix((transition:all .5s ease-in-out), webkit moz );
+      }
+      &.slide{
+        .switch{
+          left: 50%;
+        }
+      }
+    }
+    }
+  }
+}
+/* End header*/
+/* start card folowers*/
+.card-folowers{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 2rem;
+  .card{
+    padding: 1.5rem 2.5rem;
+    background-color: $Light-Grayish-Blue-CardBG;
+    text-align: center;
+    border-radius: .5rem;
+    @include prefix((transition: 1s ease), webkit moz );
+    &:hover{
+      transform: translateY(-1.1rem);
+      cursor: pointer;
+    }
+    &:first-of-type{
+      border-top: solid 5px $Facebook;
+    }
+    &:nth-child(2){
+      border-top: solid 5px $Twitter;
+    }
+     &:nth-child(3){
+      border-top: solid 5px $Bright;
+    }
+    &:last-of-type{
+      border-top: solid 5px $YouTube;
+    }
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: .8rem;
+      .social-media{
+        font-size: 1.5rem;
+        display: inline-block;
+        @include mediaColors();
+      }
+      .email{
+        margin-left: .5rem;
+        // background-color: none !important;
+        color: $Very-Dark-Blue-Text;
+        font-size: .77rem;
+       @include textTypograpfy();
+        @include prefix((transition: 1.5s ease-in-out), webkit moz );
+      }
+    }
+    .folowers-count{
+      font-size: 3rem;
+      @include prefix((transition: 1.5s ease-in-out), webkit moz );
+    }
+    .folowers{
+      font-size: .77rem;
+      @include textTypograpfy();
+      margin-bottom: 1.5rem;
+      padding:.25rem;
+      color: $ToggleLight;
+    }
+    .trend{
+      span{
+         font-size: .7rem;
+       @include textTypograpfy();
+      }
+    }
+  }
+}
+/*end card folowers*/
+/* start media stat*/
+.title-card-stat{
+  margin-top: 3rem;
+  @media (min-width :$sm) {
+    margin-top: 1rem;
+    }
+  h2{
+    font-size: 1.35rem;
+   @include textTypograpfy();
+    @include prefix((transition: 1.5s ease-in-out),webkit moz o ms);
+    @media (min-width :$sm) {
+      font-size: 1.7rem;
+    }
+  }
+}
+.media-stat{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+  .card-stat{
+    padding: 1rem 1.5rem;
+    background-color: $Light-Grayish-Blue-CardBG;
+    text-align: center;
+    border-radius: .5rem;
+    @include prefix((transition: 1s ease), webkit moz );
+     &:hover{
+      transform: translateY(-.7rem);
+      cursor: pointer;
+    }
+    .card-media-content,
+    .card-media-stat{
+      display: flex;
+      justify-content: space-between;
+    }
+    .card-media-content{
+      margin-bottom: 1.5rem;
+      align-items: center;
+      p{
+        font-size: .9rem;
+        @include textTypograpfy();
+         color: $ToggleLight;
+      }
+      span{
+          font-size: 1.3rem;
+          display: inline-block;
+          @include mediaColors();
+      }
+    }
+    .card-media-stat{
+      align-items: flex-end;
+      .folowers-count{
+        font-size: 2.1rem;
+        @include textTypograpfy();
+        @include prefix((transition: 1.5s ease-in-out), webkit moz );
+      }
+      .pourcentage{
+        .down{
+          font-size: .8rem;
+          @include textTypograpfy();
+        }
+      }
+    }
+
+  }
+}
+/* enf media stat*/
+/* start footer*/
+  footer{
+    padding: .77rem;
+    text-align: center;
+    .attribution{
+      font-size: 1rem;
+      @include textTypograpfy();
+      color: $Dark-Grayish-Blue-Text;
+      @include prefix((transition: 1.5s ease-in-out), webkit moz );
+      a{
+        color: $Facebook;
+        font-size: 1.35rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+/* end footer*/
